@@ -12,7 +12,7 @@ namespace MalenNachZahlen
         private int _x;
         private int _y;
         private string _color = "white";
-        private char _point_representer = '#';
+        private char _point_representer;
 
         public int X
         {
@@ -40,10 +40,11 @@ namespace MalenNachZahlen
 
         public Point() { }
 
-        public Point(int x, int y)
+        public Point(int x, int y, char pointRepresenter)
         {
             this.X = x;
             this.Y = y;
+            this.Point_representer = pointRepresenter;
         }
     }
 }
