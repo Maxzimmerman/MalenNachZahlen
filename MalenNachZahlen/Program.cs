@@ -2,4 +2,4 @@
 using System.IO;
 
 KoordinateSystem system = new KoordinateSystem();
-system.SetField();
+system.ReadCSv();

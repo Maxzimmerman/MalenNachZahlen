@@ -9,24 +9,12 @@ namespace MalenNachZahlen
 {
     public class KoordinateSystem
     {
-        private string[,] _field = new string[19, 19];
-        private List<Point> field = new List<Point>();
+        private List<Point> _field = new List<Point>();
 
-        public string[,] Field
+        public List<Point> Field
         {
             get { return _field; }
             set { _field = value; }
-        }
-
-        public void setField()
-        {
-            for (int i = 0; i < 19; i++)
-            {
-                for (int j = 0; j < 19; j++)
-                {
-                    _field[i, j] = $" ({i - 9}, {j - 9})";
-                }
-            }
         }
 
         public void SetField()
@@ -36,35 +24,54 @@ namespace MalenNachZahlen
                 for(int x = -9; x <= 9; x++)
                 {
                     Point point = new Point(y, x);
-                    field.Add(point);
+                    _field.Add(point);
                 }
             }
 
-            for (int i = 0; i < field.Count; i++)
+            for (int i = 0; i < _field.Count; i++)
             {
                 if(i % 19 == 0)
                 {
                     Console.WriteLine();
                 }
-                Console.Write($"{field[i].Point_representer} {field[i].X} {field[i].Y}");
+                Console.Write($"{_field[i].Point_representer} {_field[i].X} {_field[i].Y}");
             }
         }
 
-        public void printField()
+        public void ReadCSv()
         {
-            for (int i = 1; i < _field.GetLength(0); i++)
+            List<String> strings = new List<string>();
+            List<Point> redpoints = new List<Point>();
+            using(StreamReader reader = new StreamReader("H:\\c#repo\\MalenNachZahlen\\MalenNachZahlen\\dateien\\sw.csv"))
             {
-                for (int j = 1; j < _field.GetLength(1); j++)
+                while(!reader.EndOfStream)
                 {
-                    Console.Write(string.Format(_field[i, j]));
+                    strings.Add(reader.ReadLine());
                 }
-                Console.WriteLine();
             }
+
+            string x = "";
+            string y = "";
+
+            for(int i = 0; i < strings.Count; i ++)
+            {
+                for(int j = 0; j < strings[i].Length; j++)
+                {
+                    if (strings[i] == ",")
+                    {
+                        x = strings[i - 1];
+                        y = strings[i + 1];
+                    }
+                }
+            }
+
+            Console.WriteLine(x);
+            Console.WriteLine(y);
         }
 
         public KoordinateSystem() { }
 
-        public KoordinateSystem(string[,] field)
+        public KoordinateSystem(List<Point> field)
         {
             this._field = field;
         }
