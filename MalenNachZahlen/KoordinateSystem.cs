@@ -24,11 +24,11 @@ namespace MalenNachZahlen
             set { _coloredPoints = value; }
         }
 
-        public static void SetFieldForRocket(int size)
+        public static void SetFieldForRocket(int Fieldsize)
         {
-            for(int y = size; y >= -size; y--)
+            for(int y = Fieldsize; y >= -Fieldsize; y--)
             {
-                for(int x = -size; x <= size; x++)
+                for(int x = -Fieldsize; x <= Fieldsize; x++)
                 {
                     if (y == 0)
                     {
@@ -49,11 +49,11 @@ namespace MalenNachZahlen
             }
         }
 
-        public static void SetFieldForSizeForOtherThanRocket(int size)
+        public static void SetFieldForSizeForOtherThanRocket(int Fieldsize)
         {
-            for (int x = 0; x <= size; x++)
+            for (int x = 0; x <= Fieldsize; x++)
             {
-                for (int y = 0; y <= size; y++)
+                for (int y = 0; y <= Fieldsize; y++)
                 {
                     Point point = new Point(x, y);
                     _field.Add(point);
