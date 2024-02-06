@@ -113,5 +113,38 @@ namespace MalenNachZahlen
 
             _coloredPoints = points;
         }
+
+        public static async void MovingImage()
+        {
+            for (int i = 0; i < _field.Count; i++)
+            {
+                // adjust for different sizes
+                if (i % 19 == 0)
+                {
+                    Console.WriteLine();
+                }
+                else if (_field[i].Color.ToLower() == "red")
+                {
+                    Console.ForegroundColor = ConsoleColor.Red;
+                    Console.Write($"{_field[i].Point_representer}");
+                    Console.ForegroundColor = ConsoleColor.White;
+                }
+
+                else if (_field[i].Color.ToLower() == "white")
+                {
+                    Console.Write($"{_field[i].Point_representer}");
+                }
+
+            }
+
+            var periodicTimer = new PeriodicTimer(TimeSpan.FromSeconds(1));
+            while (await periodicTimer.WaitForNextTickAsync())
+            {
+                for (int i = 0; i < _field.Count; i++)
+                {
+                    
+                }
+            }
+        }
     }
 }
