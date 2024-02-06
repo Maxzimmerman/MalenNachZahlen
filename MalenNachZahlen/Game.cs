@@ -34,7 +34,7 @@ namespace MalenNachZahlen
         {
             try
             {
-                KoordinateSystem.ReadCSV($"H:\\c#repo\\MalenNachZahlen\\MalenNachZahlen\\dateien\\{Picture}.csv");
+                KoordinateSystem.ReadCSV($"C:\\Users\\Max Zimmermann\\Source\\Repos\\Maxzimmerman\\MalenNachZahlen\\MalenNachZahlen\\dateien\\{Picture}.csv");
                 if(FieldSize == 9)
                 {
                     KoordinateSystem.SetFieldForRocket(FieldSize);
@@ -75,20 +75,20 @@ namespace MalenNachZahlen
                         break;
                     case 2:
                         Picture = "bug";
-                        FieldSize = 12;
-                        LineSize = 13;
+                        FieldSize = 13;
+                        LineSize = 14;
                         correctInput = true;
                         break;
                     case 3:
                         Picture = "butterfly";
-                        FieldSize = 11;
-                        LineSize = 23;
+                        FieldSize = 12;
+                        LineSize = 13;
                         correctInput = true;
                         break;
                     case 4:
                         Picture = "bien";
-                        FieldSize = 10;
-                        LineSize = 21;
+                        FieldSize = 13;
+                        LineSize = 14;
                         correctInput = true;
                         break;
                     default:

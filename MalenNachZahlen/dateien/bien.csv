@@ -1,7 +1,65 @@
-﻿BLAU: 5C, 5D, 5H, 5I, 6B, 6C, 6D, 6H, 6I, 6J, 7B, 7C, 
-7I, 7J, 8A, 8B, 8C, 8I, 8J, 8K, 9A, 9B, 9J, 9K 
-GELB: 5E, 5F, 5G, 7D, 7E, 7F, 7G, 7H, 9D, 9E, 9F, 9G, 
-9H 
-SCHWARZ: 1C, 1I, 2D, 2H, 3E, 3F, 3G, 4E, 4F, 4G, 6E, 
-6F, 6G, 8D, 8E, 8F, 8G, 8H, 10D, 10E, 10F, 10G, 10H, 
-11E, 11F, 11G
+﻿blau,5,3
+blau,5,4
+blau,5,8
+blau,5,9
+blau,6,2
+blau,6,3
+blau,6,4
+blau,6,8
+blau,6,9
+blau,6,10
+blau,7,2
+blau,7,3
+blau,7,9
+blau,7,10
+blau,8,1
+blau,8,2
+blau,8,3
+blau,8,9
+blau,8,10
+blau,8,11
+blau,9,1
+blau,9,2
+blau,9,10
+blau,9,11
+gelb,5,5
+gelb,5,6
+gelb,5,7
+gelb,7,4
+gelb,7,5
+gelb,7,6
+gelb,7,7
+gelb,7,8
+gelb,9,4
+gelb,9,5
+gelb,9,6
+gelb,9,7
+gelb,9,8
+schwarz,1,3
+schwarz,1,9
+schwarz,2,4
+schwarz,2,8
+schwarz,3,5
+schwarz,3,6
+schwarz,3,7
+schwarz,4,5
+schwarz,4,6
+schwarz,4,7
+schwarz,6,5
+schwarz,6,6
+schwarz,6,7
+schwarz,8,4
+schwarz,8,5
+schwarz,8,6
+schwarz,8,7
+schwarz,8,8
+schwarz,10,4
+schwarz,10,5
+schwarz,10,6
+schwarz,10,7
+schwarz,10,8
+schwarz,11,5
+schwarz,11,6
+schwarz,11,7
+
+

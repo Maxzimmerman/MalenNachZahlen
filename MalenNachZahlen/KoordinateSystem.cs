@@ -26,7 +26,6 @@ namespace MalenNachZahlen
 
         public static void SetFieldForRocket(int size)
         {
-            // adjust for different sizes
             for(int y = size; y >= -size; y--)
             {
                 for(int x = -size; x <= size; x++)
@@ -52,12 +51,11 @@ namespace MalenNachZahlen
 
         public static void SetFieldForSizeForOtherThanRocket(int size)
         {
-            // adjust for different sizes
-            for (int y = size; y >= 0; y--)
+            for (int x = 0; x <= size; x++)
             {
-                for (int x = 0; x <= size; x++)
+                for (int y = 0; y <= size; y++)
                 {
-                    Point point = new Point(y, x, '#');
+                    Point point = new Point(x, y);
                     _field.Add(point);
                 }
             }
@@ -65,14 +63,13 @@ namespace MalenNachZahlen
 
         public static void UpdateField()
         {
-            // adjust color
             for (int j = 0; j < _coloredPoints.Count; j++)
             {
                 for (int i = 0; i < _field.Count; i++)
                 {
                     if (_field[i].Y == _coloredPoints[j].Y && _field[i].X == _coloredPoints[j].X)
                     {
-                        _field[i].Color = "Red";
+                        _field[i].Color = _coloredPoints[j].Color;
                     }
                 }
             }
@@ -82,18 +79,40 @@ namespace MalenNachZahlen
         {
             for (int i = 0; i < _field.Count; i++)
             {
-                // adjust for different sizes
                 if(i % lineSize  == 0)
                 {
                     Console.WriteLine();
                 }
-                else if (_field[i].Color.ToLower() == "red")
+                else if (_field[i].Color.ToLower() == "rot")
                 {
                     Console.ForegroundColor = ConsoleColor.Red;
                     Console.Write($"{_field[i].Point_representer}");
                     Console.ForegroundColor = ConsoleColor.White;
                 }
-
+                else if (_field[i].Color.ToLower() == "schwarz")
+                {
+                    Console.ForegroundColor = ConsoleColor.Black;
+                    Console.Write($"{_field[i].Point_representer}");
+                    Console.ForegroundColor = ConsoleColor.White;
+                }
+                else if (_field[i].Color.ToLower() == "blau")
+                {
+                    Console.ForegroundColor = ConsoleColor.Blue;
+                    Console.Write($"{_field[i].Point_representer}");
+                    Console.ForegroundColor = ConsoleColor.White;
+                }
+                else if (_field[i].Color.ToLower() == "gelb")
+                {
+                    Console.ForegroundColor = ConsoleColor.Yellow;
+                    Console.Write($"{_field[i].Point_representer}");
+                    Console.ForegroundColor = ConsoleColor.White;
+                }
+                else if (_field[i].Color.ToLower() == "grün")
+                {
+                    Console.ForegroundColor = ConsoleColor.Green;
+                    Console.Write($"{_field[i].Point_representer}");
+                    Console.ForegroundColor = ConsoleColor.White;
+                }
                 else if(_field[i].Color.ToLower() == "white")
                 {
                     Console.Write($"{_field[i].Point_representer}");
@@ -113,17 +132,12 @@ namespace MalenNachZahlen
                     string line = reader.ReadLine();
                     string[] coordinates = line.Split(',');
 
-                    if (coordinates.Length == 2 && int.TryParse(coordinates[0], out int x) && int.TryParse(coordinates[1], out int y))
+                    if(coordinates.Length >= 3 && int.TryParse(coordinates[1], out int x) && int.TryParse(coordinates[2], out int y))
                     {
-                        points.Add(new Point(x, y, 'R'));
-                    }
-                    else
-                    {
-                        Console.WriteLine($"Skipping invalid line: {line}");
+                        points.Add(new Point(x, y, coordinates[0]));
                     }
                 }
             }
-
             _coloredPoints = points;
         }
     }
