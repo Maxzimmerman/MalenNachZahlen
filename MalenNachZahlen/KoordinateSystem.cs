@@ -7,28 +7,29 @@ using System.Threading.Tasks;
 
 namespace MalenNachZahlen
 {
-    public class KoordinateSystem
+    public static class KoordinateSystem
     {
-        private List<Point> _field = new List<Point>();
-        private List<Point> _coloredPoints = new List<Point>();
+        private static List<Point> _field = new List<Point>();
+        private static List<Point> _coloredPoints = new List<Point>();
 
-        public List<Point> Field
+        public static List<Point> Field
         {
             get { return _field; }
             set { _field = value; }
         }
 
-        public List<Point> ColoredPoints
+        public static List<Point> ColoredPoints
         {
             get { return _coloredPoints; }
             set { _coloredPoints = value; }
         }
 
-        public void SetField()
+        public static void SetField(int size)
         {
-            for(int y = 9; y >= -9; y--)
+            // adjust for different sizes
+            for(int y = size; y >= -size; y--)
             {
-                for(int x = -9; x <= 9; x++)
+                for(int x = -size; x <= size; x++)
                 {
                     if (y == 0)
                     {
@@ -49,11 +50,12 @@ namespace MalenNachZahlen
             }
         }
 
-        public void UpdateField()
+        public static void UpdateField()
         {
-            for (int i = 0; i < _field.Count; i++)
+            // adjust color
+            for (int j = 0; j < _coloredPoints.Count; j++)
             {
-                for (int j = 0; j < _coloredPoints.Count; j++)
+                for (int i = 0; i < _field.Count; i++)
                 {
                     if (_field[i].Y == _coloredPoints[j].Y && _field[i].X == _coloredPoints[j].X)
                     {
@@ -63,29 +65,31 @@ namespace MalenNachZahlen
             }
         }
 
-        public void printField()
+        public static void printField()
         {
             for (int i = 0; i < _field.Count; i++)
             {
+                // adjust for different sizes
                 if(i % 19 == 0)
                 {
                     Console.WriteLine();
                 }
-
-                if (_field[i].Color.ToLower() == "white")
-                {
-                    Console.Write($"{_field[i].Point_representer}");
-                } 
-                else if (_field[i].Color.ToLower() == "Red")
+                else if (_field[i].Color.ToLower() == "red")
                 {
                     Console.ForegroundColor = ConsoleColor.Red;
                     Console.Write($"{_field[i].Point_representer}");
                     Console.ForegroundColor = ConsoleColor.White;
                 }
+
+                else if(_field[i].Color.ToLower() == "white")
+                {
+                    Console.Write($"{_field[i].Point_representer}");
+                } 
+                
             }
         }
 
-        public List<Point> ReadCSV(string filePath)
+        public static void ReadCSV(string filePath)
         {
             List<Point> points = new List<Point>();
 
@@ -107,16 +111,7 @@ namespace MalenNachZahlen
                 }
             }
 
-            this._coloredPoints = points;
-            return points;
-        }
-
-        public KoordinateSystem() { }
-
-        public KoordinateSystem(List<Point> field, List<Point> coloredPoints)
-        {
-            this._field = field;
-            this._coloredPoints = coloredPoints;
+            _coloredPoints = points;
         }
     }
 }
