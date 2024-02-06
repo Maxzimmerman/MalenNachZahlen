@@ -10,6 +10,7 @@ namespace MalenNachZahlen
     {
         private static string _picture;
         private static int _fieldSize;
+        private static int _lineSize;
 
         public static string Picture
         {
@@ -23,14 +24,27 @@ namespace MalenNachZahlen
             set { _fieldSize = value; }
         }
 
+        public static int LineSize
+        {
+            get { return _lineSize; }
+            set { _lineSize = value; }
+        }
+
         public static void SetGame()
         {
             try
             {
                 KoordinateSystem.ReadCSV($"H:\\c#repo\\MalenNachZahlen\\MalenNachZahlen\\dateien\\{Picture}.csv");
-                KoordinateSystem.SetField(FieldSize);
+                if(FieldSize == 9)
+                {
+                    KoordinateSystem.SetFieldForRocket(FieldSize);
+                }
+                else
+                {
+                    KoordinateSystem.SetFieldForSizeForOtherThanRocket(FieldSize);
+                }
                 KoordinateSystem.UpdateField();
-                KoordinateSystem.printField();
+                KoordinateSystem.printField(LineSize);
             }
             catch(Exception ex)
             {
@@ -56,21 +70,25 @@ namespace MalenNachZahlen
                     case 1:
                         Picture = "rocket";
                         FieldSize = 9;
+                        LineSize = 19;
                         correctInput = true;
                         break;
                     case 2:
                         Picture = "bug";
                         FieldSize = 12;
+                        LineSize = 13;
                         correctInput = true;
                         break;
                     case 3:
                         Picture = "butterfly";
                         FieldSize = 11;
+                        LineSize = 23;
                         correctInput = true;
                         break;
                     case 4:
                         Picture = "bien";
                         FieldSize = 10;
+                        LineSize = 21;
                         correctInput = true;
                         break;
                     default:
