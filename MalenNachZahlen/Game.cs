@@ -87,8 +87,8 @@ namespace MalenNachZahlen
                         break;
                     case 4:
                         Picture = "bien";
-                        FieldSize = 13;
-                        LineSize = 14;
+                        FieldSize = 11;
+                        LineSize = 12;
                         correctInput = true;
                         break;
                     default:
