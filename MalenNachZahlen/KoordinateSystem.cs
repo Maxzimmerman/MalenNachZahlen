@@ -139,7 +139,7 @@ namespace MalenNachZahlen
                     }
                 }
             }
-            _coloredPoints = points;
+            this.ColoredPoints = points;
         }
     }
 }
