@@ -34,7 +34,7 @@ namespace MalenNachZahlen
         {
             try
             {
-                KoordinateSystem.ReadCSV($"C:\\Users\\Max Zimmermann\\Source\\Repos\\Maxzimmerman\\MalenNachZahlen\\MalenNachZahlen\\dateien\\{Picture}.csv");
+                KoordinateSystem.ReadCSV($"H:\\c#repo\\MalenNachZahlen\\MalenNachZahlen\\dateien\\{Picture}.csv");
                 if(FieldSize == 9)
                 {
                     KoordinateSystem.SetFieldForRocket(FieldSize);
@@ -59,10 +59,11 @@ namespace MalenNachZahlen
                 int input;
                 bool correctInput = false;
                 Console.WriteLine("Choose you image: ");
-                Console.WriteLine("1. Rocket");
-                Console.WriteLine("2. Bug");
-                Console.WriteLine("3. Butterfly");
-                Console.WriteLine("4. Bien");
+                Console.WriteLine("[1] Rocket");
+                Console.WriteLine("[2] Bug");
+                Console.WriteLine("[3] Butterfly");
+                Console.WriteLine("[4] Bien");
+                Console.WriteLine("[5] Escape");
                 input = Convert.ToInt32(Console.ReadLine());
 
                 switch (input)
@@ -91,11 +92,14 @@ namespace MalenNachZahlen
                         LineSize = 12;
                         correctInput = true;
                         break;
+                    case 5:
+                        correctInput = true;
+                        break;
                     default:
                         continue;
                 }
                 SetGame();
-                if(correctInput)
+                if (correctInput)
                 {
                     break;
                 }
