@@ -1,0 +1,25 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="MalenNachZahlen.KlassenDiagramm.Point">
+    <Position X="1" Y="2.5" Width="2" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAIAAQIEAAAAAAAAAAAAAAAAAAABAAAgAAAYAA=</HashCode>
+      <FileName>Point.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="MalenNachZahlen.KlassenDiagramm.Game">
+    <Position X="6.5" Y="2.5" Width="1.75" />
+    <TypeIdentifier>
+      <HashCode>gAAAgIAAAAABCCABAAAAAAAAAAAAAAAAAAAAgAAAAAA=</HashCode>
+      <FileName>Game.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="MalenNachZahlen.KlassenDiagramm.KoordinateSystem">
+    <Position X="3.5" Y="2.5" Width="2.75" />
+    <TypeIdentifier>
+      <HashCode>ABSAAAAAAAAQACAAAAAAAAAEAAAAABAAAAAAAAAAgIA=</HashCode>
+      <FileName>KoordinateSystem.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>

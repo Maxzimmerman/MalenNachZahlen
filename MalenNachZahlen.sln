@@ -5,6 +5,10 @@ VisualStudioVersion = 17.7.34031.279
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MalenNachZahlen", "MalenNachZahlen\MalenNachZahlen.csproj", "{8157DE83-CEA6-4B34-9722-36DC356C980E}"
 EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MalenNachZahlen.KlassenDiagramm", "MalenNachZahlen.KlassenDiagramm\MalenNachZahlen.KlassenDiagramm.csproj", "{B4B7EF50-2B04-4AF5-918E-E6DFC2A99E15}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MalenNachZahlen.WebApp", "MalenNachZahlen.WebApp\MalenNachZahlen.WebApp.csproj", "{BE753711-4AE9-40E9-AAA0-89E3914AD8E8}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +19,14 @@ Global
 		{8157DE83-CEA6-4B34-9722-36DC356C980E}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{8157DE83-CEA6-4B34-9722-36DC356C980E}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{8157DE83-CEA6-4B34-9722-36DC356C980E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B4B7EF50-2B04-4AF5-918E-E6DFC2A99E15}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B4B7EF50-2B04-4AF5-918E-E6DFC2A99E15}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B4B7EF50-2B04-4AF5-918E-E6DFC2A99E15}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B4B7EF50-2B04-4AF5-918E-E6DFC2A99E15}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BE753711-4AE9-40E9-AAA0-89E3914AD8E8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BE753711-4AE9-40E9-AAA0-89E3914AD8E8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BE753711-4AE9-40E9-AAA0-89E3914AD8E8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BE753711-4AE9-40E9-AAA0-89E3914AD8E8}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

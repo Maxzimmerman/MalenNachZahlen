@@ -84,31 +84,31 @@ namespace MalenNachZahlen
                 {
                     Console.WriteLine();
                 }
-                else if (_field[pointIndex].Color.ToLower() == "rot")
+                else if (_field[pointIndex].Color.ToLower() == "red")
                 {
                     Console.ForegroundColor = ConsoleColor.Red;
                     Console.Write($"{_field[pointIndex].Point_representer}");
                     Console.ForegroundColor = ConsoleColor.White;
                 }
-                else if (_field[pointIndex].Color.ToLower() == "schwarz")
+                else if (_field[pointIndex].Color.ToLower() == "black")
                 {
                     Console.ForegroundColor = ConsoleColor.Black;
                     Console.Write($"{_field[pointIndex].Point_representer}");
                     Console.ForegroundColor = ConsoleColor.White;
                 }
-                else if (_field[pointIndex].Color.ToLower() == "blau")
+                else if (_field[pointIndex].Color.ToLower() == "blue")
                 {
                     Console.ForegroundColor = ConsoleColor.Blue;
                     Console.Write($"{_field[pointIndex].Point_representer}");
                     Console.ForegroundColor = ConsoleColor.White;
                 }
-                else if (_field[pointIndex].Color.ToLower() == "gelb")
+                else if (_field[pointIndex].Color.ToLower() == "yellow")
                 {
                     Console.ForegroundColor = ConsoleColor.Yellow;
                     Console.Write($"{_field[pointIndex].Point_representer}");
                     Console.ForegroundColor = ConsoleColor.White;
                 }
-                else if (_field[pointIndex].Color.ToLower() == "grün")
+                else if (_field[pointIndex].Color.ToLower() == "green")
                 {
                     Console.ForegroundColor = ConsoleColor.Green;
                     Console.Write($"{_field[pointIndex].Point_representer}");

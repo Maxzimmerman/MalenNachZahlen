@@ -1,0 +1,74 @@
+﻿@model MalenNachZahlen.WebApp.Models.ViewModels.ImagesViewModel;
+
+<div class="text-center">
+    <div>
+        <button class="btn btn-danger">Rocket</button>
+        <button class="btn btn-dark">Bug</button>
+        <button class="btn btn-success">Butterfly</button>
+        <button class="btn btn-primary">Rocket</button>
+    </div>
+
+    <div class="rocket">
+        <section style="display: flex !important; flex-wrap: wrap;">
+            @for (int pointIndex = 0; pointIndex < Model.rocketImage.Field.Count; pointIndex++)
+            {
+                if (pointIndex % 19 == 0 && pointIndex != 0)
+                {
+                    <br />
+                }
+                else if (Model.rocketImage.Field[pointIndex].Point_representer == '-' || Model.rocketImage.Field[pointIndex].Point_representer == '|')
+                {
+                    <div style="background-color: black; width: 10px; height: 20px; margin: 1px; flex-basis: calc(100% / 19);"></div>
+                }
+                else
+                {
+                    <div style="background-color: @Model.rocketImage.Field[pointIndex].Color; width: 10px; height: 20px; margin: 1px; flex-basis: calc(100% / 19);"></div>
+                }
+            }
+        </section>
+    </div>
+    
+
+    <section class="bug" style="display: flex; flex-wrap: wrap;">
+        @for (int pointIndex = 0; pointIndex < Model.bugImage.Field.Count; pointIndex++)
+        {
+            if (pointIndex % 14 == 0 && pointIndex != 0)
+            {
+                <br />
+            }
+            else
+            {
+                <div style="background-color: @Model.bugImage.Field[pointIndex].Color; width: 20px; height: 20px; margin: 1px; flex-basis: calc(100% / 14);"></div>
+            }
+        }
+    </section>
+
+    <section class="butterfly" style="display: flex !important; flex-wrap: wrap;">
+        @for (int pointIndex = 0; pointIndex < Model.butterflytImage.Field.Count; pointIndex++)
+        {
+            if (pointIndex % 13 == 0 && pointIndex != 0)
+            {
+                <br />
+            }
+            else
+            {
+                <div style="background-color: @Model.butterflytImage.Field[pointIndex].Color; width: 20px; height: 20px; margin: 1px; flex-basis: calc(100% / 13);"></div>
+            }
+        }
+    </section>
+
+    <section class="bien" style="display: flex !important; flex-wrap: wrap;">
+        @for (int pointIndex = 0; pointIndex < Model.bienImage.Field.Count; pointIndex++)
+        {
+            if (pointIndex % 12 == 0 && pointIndex != 0)
+            {
+                <br />
+            }
+            else
+            {
+                <div style="background-color: @Model.bienImage.Field[pointIndex].Color; width: 20px; height: 20px; margin: 1px; flex-basis: calc(100% / 12);"></div>
+            }
+        }
+    </section>
+
+</div>

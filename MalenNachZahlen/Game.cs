@@ -47,8 +47,8 @@ namespace MalenNachZahlen
             try
             {
                 KoordinateSystem system = new KoordinateSystem();
-                system.ReadCSV($"H:\\c#repo\\MalenNachZahlen\\MalenNachZahlen\\dateien\\{Picture}.csv");
-                if(FieldSize == 9)
+                system.ReadCSV($"C:\\Users\\Max Zimmermann\\Source\\Repos\\Maxzimmerman\\MalenNachZahlen\\MalenNachZahlen\\dateien\\{Picture}.csv");
+                if (FieldSize == 9)
                 {
                     system.SetFieldForRocket(FieldSize);
                 }
