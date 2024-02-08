@@ -30,6 +30,18 @@ namespace MalenNachZahlen
             set { _lineSize = value; }
         }
 
+        public Game()
+        {
+
+        }
+
+        public Game(string picture, int fieldSize, int lineSize)
+        {
+            this.Picture = picture;
+            this.FieldSize = fieldSize;
+            this.LineSize = lineSize;
+        }
+
         public void SetGame()
         {
             try
