@@ -26,23 +26,23 @@ namespace MalenNachZahlen
 
         public static void SetFieldForRocket(int Fieldsize)
         {
-            for(int y = Fieldsize; y >= -Fieldsize; y--)
+            for(int y_koordinate = Fieldsize; y_koordinate >= -Fieldsize; y_koordinate--)
             {
-                for(int x = -Fieldsize; x <= Fieldsize; x++)
+                for(int x_koordiante = -Fieldsize; x_koordiante <= Fieldsize; x_koordiante++)
                 {
-                    if (y == 0)
+                    if (y_koordinate == 0)
                     {
-                        Point point1 = new Point(x, y, '-');
+                        Point point1 = new Point(x_koordiante, y_koordinate, '-');
                         _field.Add(point1);
                     }
-                    else if (x == 0)
+                    else if (x_koordiante == 0)
                     {
-                        Point point2 = new Point(x, y, '|');
+                        Point point2 = new Point(x_koordiante, y_koordinate, '|');
                         _field.Add(point2);
                     }
                     else
                     {
-                        Point point = new Point(x, y, '#');
+                        Point point = new Point(x_koordiante, y_koordinate, '#');
                         _field.Add(point);   
                     }
                 }
@@ -51,11 +51,11 @@ namespace MalenNachZahlen
 
         public static void SetFieldForSizeForOtherThanRocket(int Fieldsize)
         {
-            for (int x = 0; x <= Fieldsize; x++)
+            for (int x_koordiante = 0; x_koordiante <= Fieldsize; x_koordiante++)
             {
-                for (int y = 0; y <= Fieldsize; y++)
+                for (int y_koordinate = 0; y_koordinate <= Fieldsize; y_koordinate++)
                 {
-                    Point point = new Point(x, y);
+                    Point point = new Point(x_koordiante, y_koordinate);
                     _field.Add(point);
                 }
             }
@@ -63,13 +63,13 @@ namespace MalenNachZahlen
 
         public static void UpdateField()
         {
-            for (int j = 0; j < _coloredPoints.Count; j++)
+            for (int coloredPointIndex = 0; coloredPointIndex < _coloredPoints.Count; coloredPointIndex++)
             {
-                for (int i = 0; i < _field.Count; i++)
+                for (int fieldPointIndex = 0; fieldPointIndex < _field.Count; fieldPointIndex++)
                 {
-                    if (_field[i].Y == _coloredPoints[j].Y && _field[i].X == _coloredPoints[j].X)
+                    if (_field[fieldPointIndex].Y == _coloredPoints[coloredPointIndex].Y && _field[fieldPointIndex].X == _coloredPoints[coloredPointIndex].X)
                     {
-                        _field[i].Color = _coloredPoints[j].Color;
+                        _field[fieldPointIndex].Color = _coloredPoints[coloredPointIndex].Color;
                     }
                 }
             }
