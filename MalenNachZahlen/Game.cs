@@ -6,45 +6,46 @@ using System.Threading.Tasks;
 
 namespace MalenNachZahlen
 {
-    public static class Game
+    public class Game
     {
-        private static string _picture;
-        private static int _fieldSize;
-        private static int _lineSize;
+        private string _picture;
+        private int _fieldSize;
+        private int _lineSize;
 
-        public static string Picture
+        public string Picture
         {
             get { return _picture; }
             set { _picture = value; }
         }
 
-        public static int FieldSize
+        public int FieldSize
         {
             get { return _fieldSize; }
             set { _fieldSize = value; }
         }
 
-        public static int LineSize
+        public int LineSize
         {
             get { return _lineSize; }
             set { _lineSize = value; }
         }
 
-        public static void SetGame()
+        public void SetGame()
         {
             try
             {
-                KoordinateSystem.ReadCSV($"H:\\c#repo\\MalenNachZahlen\\MalenNachZahlen\\dateien\\{Picture}.csv");
+                KoordinateSystem system = new KoordinateSystem();
+                system.ReadCSV($"H:\\c#repo\\MalenNachZahlen\\MalenNachZahlen\\dateien\\{Picture}.csv");
                 if(FieldSize == 9)
                 {
-                    KoordinateSystem.SetFieldForRocket(FieldSize);
+                    system.SetFieldForRocket(FieldSize);
                 }
                 else
                 {
-                    KoordinateSystem.SetFieldForSizeForOtherThanRocket(FieldSize);
+                    system.SetFieldForSizeForOtherThanRocket(FieldSize);
                 }
-                KoordinateSystem.UpdateField();
-                KoordinateSystem.printField(LineSize);
+                system.UpdateField();
+                system.printField(LineSize);
             }
             catch(Exception ex)
             {
@@ -52,7 +53,7 @@ namespace MalenNachZahlen
             }
         }
 
-        public static void ChooseImage()
+        public void ChooseImage()
         {
             while (true)
             {
@@ -73,32 +74,35 @@ namespace MalenNachZahlen
                         FieldSize = 9;
                         LineSize = 19;
                         correctInput = true;
-                        break;
+                        SetGame();
+                        continue;
                     case 2:
                         Picture = "bug";
                         FieldSize = 13;
                         LineSize = 14;
                         correctInput = true;
-                        break;
+                        SetGame();
+                        continue;
                     case 3:
                         Picture = "butterfly";
                         FieldSize = 12;
                         LineSize = 13;
                         correctInput = true;
-                        break;
+                        SetGame();
+                        continue;
                     case 4:
                         Picture = "bien";
                         FieldSize = 11;
                         LineSize = 12;
                         correctInput = true;
-                        break;
+                        SetGame();
+                        continue;
                     case 5:
                         correctInput = true;
                         break;
                     default:
                         continue;
                 }
-                SetGame();
                 if (correctInput)
                 {
                     break;

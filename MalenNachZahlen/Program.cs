@@ -2,5 +2,6 @@
 using System.IO;
 using System.Threading.Channels;
 
-Game.ChooseImage();
+Game game = new Game();
+game.ChooseImage();
 

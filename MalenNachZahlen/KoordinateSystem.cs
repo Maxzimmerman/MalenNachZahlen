@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Threading.Channels;
@@ -7,24 +8,24 @@ using System.Threading.Tasks;
 
 namespace MalenNachZahlen
 {
-    public static class KoordinateSystem
+    public class KoordinateSystem
     {
-        private static List<Point> _field = new List<Point>();
-        private static List<Point> _coloredPoints = new List<Point>();
+        private List<Point> _field = new List<Point>();
+        private List<Point> _coloredPoints = new List<Point>();
 
-        public static List<Point> Field
+        public List<Point> Field
         {
             get { return _field; }
             set { _field = value; }
         }
 
-        public static List<Point> ColoredPoints
+        public List<Point> ColoredPoints
         {
             get { return _coloredPoints; }
             set { _coloredPoints = value; }
         }
 
-        public static void SetFieldForRocket(int Fieldsize)
+        public void SetFieldForRocket(int Fieldsize)
         {
             for(int y_koordinate = Fieldsize; y_koordinate >= -Fieldsize; y_koordinate--)
             {
@@ -49,7 +50,7 @@ namespace MalenNachZahlen
             }
         }
 
-        public static void SetFieldForSizeForOtherThanRocket(int Fieldsize)
+        public void SetFieldForSizeForOtherThanRocket(int Fieldsize)
         {
             for (int x_koordiante = 0; x_koordiante <= Fieldsize; x_koordiante++)
             {
@@ -61,7 +62,7 @@ namespace MalenNachZahlen
             }
         }
 
-        public static void UpdateField()
+        public void UpdateField()
         {
             for (int coloredPointIndex = 0; coloredPointIndex < _coloredPoints.Count; coloredPointIndex++)
             {
@@ -75,53 +76,53 @@ namespace MalenNachZahlen
             }
         }
 
-        public static void printField(int lineSize)
+        public void printField(int lineSize)
         {
-            for (int i = 0; i < _field.Count; i++)
+            for (int pointIndex = 0; pointIndex < _field.Count; pointIndex++)
             {
-                if(i % lineSize  == 0)
+                if(pointIndex % lineSize  == 0)
                 {
                     Console.WriteLine();
                 }
-                else if (_field[i].Color.ToLower() == "rot")
+                else if (_field[pointIndex].Color.ToLower() == "rot")
                 {
                     Console.ForegroundColor = ConsoleColor.Red;
-                    Console.Write($"{_field[i].Point_representer}");
+                    Console.Write($"{_field[pointIndex].Point_representer}");
                     Console.ForegroundColor = ConsoleColor.White;
                 }
-                else if (_field[i].Color.ToLower() == "schwarz")
+                else if (_field[pointIndex].Color.ToLower() == "schwarz")
                 {
                     Console.ForegroundColor = ConsoleColor.Black;
-                    Console.Write($"{_field[i].Point_representer}");
+                    Console.Write($"{_field[pointIndex].Point_representer}");
                     Console.ForegroundColor = ConsoleColor.White;
                 }
-                else if (_field[i].Color.ToLower() == "blau")
+                else if (_field[pointIndex].Color.ToLower() == "blau")
                 {
                     Console.ForegroundColor = ConsoleColor.Blue;
-                    Console.Write($"{_field[i].Point_representer}");
+                    Console.Write($"{_field[pointIndex].Point_representer}");
                     Console.ForegroundColor = ConsoleColor.White;
                 }
-                else if (_field[i].Color.ToLower() == "gelb")
+                else if (_field[pointIndex].Color.ToLower() == "gelb")
                 {
                     Console.ForegroundColor = ConsoleColor.Yellow;
-                    Console.Write($"{_field[i].Point_representer}");
+                    Console.Write($"{_field[pointIndex].Point_representer}");
                     Console.ForegroundColor = ConsoleColor.White;
                 }
-                else if (_field[i].Color.ToLower() == "grün")
+                else if (_field[pointIndex].Color.ToLower() == "grün")
                 {
                     Console.ForegroundColor = ConsoleColor.Green;
-                    Console.Write($"{_field[i].Point_representer}");
+                    Console.Write($"{_field[pointIndex].Point_representer}");
                     Console.ForegroundColor = ConsoleColor.White;
                 }
-                else if(_field[i].Color.ToLower() == "white")
+                else if(_field[pointIndex].Color.ToLower() == "white")
                 {
-                    Console.Write($"{_field[i].Point_representer}");
+                    Console.Write($"{_field[pointIndex].Point_representer}");
                 } 
                 
             }
         }
 
-        public static void ReadCSV(string filePath)
+        public void ReadCSV(string filePath)
         {
             List<Point> points = new List<Point>();
 
