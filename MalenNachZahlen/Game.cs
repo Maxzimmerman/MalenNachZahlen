@@ -47,7 +47,7 @@ namespace MalenNachZahlen
             try
             {
                 KoordinateSystem system = new KoordinateSystem();
-                system.ReadCSV($"C:\\Users\\Max Zimmermann\\Source\\Repos\\Maxzimmerman\\MalenNachZahlen\\MalenNachZahlen\\dateien\\{Picture}.csv");
+                system.ReadCSV($"H:\\c#repo\\MalenNachZahlen\\MalenNachZahlen\\dateien\\{Picture}.csv");
                 if (FieldSize == 9)
                 {
                     system.SetFieldForRocket(FieldSize);
@@ -77,47 +77,55 @@ namespace MalenNachZahlen
                 Console.WriteLine("[3] Butterfly");
                 Console.WriteLine("[4] Bien");
                 Console.WriteLine("[5] Escape");
-                input = Convert.ToInt32(Console.ReadLine());
+                
+                try
+                {
+                    input = Convert.ToInt32(Console.ReadLine());
 
-                switch (input)
-                {
-                    case 1:
-                        Picture = "rocket";
-                        FieldSize = 9;
-                        LineSize = 19;
-                        correctInput = true;
-                        SetGame();
-                        continue;
-                    case 2:
-                        Picture = "bug";
-                        FieldSize = 13;
-                        LineSize = 14;
-                        correctInput = true;
-                        SetGame();
-                        continue;
-                    case 3:
-                        Picture = "butterfly";
-                        FieldSize = 12;
-                        LineSize = 13;
-                        correctInput = true;
-                        SetGame();
-                        continue;
-                    case 4:
-                        Picture = "bien";
-                        FieldSize = 11;
-                        LineSize = 12;
-                        correctInput = true;
-                        SetGame();
-                        continue;
-                    case 5:
-                        correctInput = true;
+                    switch (input)
+                    {
+                        case 1:
+                            Picture = "rocket";
+                            FieldSize = 9;
+                            LineSize = 19;
+                            correctInput = true;
+                            SetGame();
+                            continue;
+                        case 2:
+                            Picture = "bug";
+                            FieldSize = 13;
+                            LineSize = 14;
+                            correctInput = true;
+                            SetGame();
+                            continue;
+                        case 3:
+                            Picture = "butterfly";
+                            FieldSize = 12;
+                            LineSize = 13;
+                            correctInput = true;
+                            SetGame();
+                            continue;
+                        case 4:
+                            Picture = "bien";
+                            FieldSize = 11;
+                            LineSize = 12;
+                            correctInput = true;
+                            SetGame();
+                            continue;
+                        case 5:
+                            correctInput = true;
+                            break;
+                        default:
+                            continue;
+                    }
+                    if (correctInput)
+                    {
                         break;
-                    default:
-                        continue;
+                    }
                 }
-                if (correctInput)
+                catch(Exception ex)
                 {
-                    break;
+                    Console.WriteLine(ex.Message);
                 }
             }
         }

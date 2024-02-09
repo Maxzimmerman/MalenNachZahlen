@@ -126,20 +126,27 @@ namespace MalenNachZahlen
         {
             List<Point> points = new List<Point>();
 
-            using (StreamReader reader = new StreamReader(filePath))
+            try
             {
-                while (!reader.EndOfStream)
+                using (StreamReader reader = new StreamReader(filePath))
                 {
-                    string line = reader.ReadLine();
-                    string[] coordinates = line.Split(',');
-
-                    if(coordinates.Length >= 3 && int.TryParse(coordinates[1], out int x) && int.TryParse(coordinates[2], out int y))
+                    while (!reader.EndOfStream)
                     {
-                        points.Add(new Point(x, y, coordinates[0]));
+                        string line = reader.ReadLine();
+                        string[] coordinates = line.Split(',');
+
+                        if (coordinates.Length >= 3 && int.TryParse(coordinates[1], out int x) && int.TryParse(coordinates[2], out int y))
+                        {
+                            points.Add(new Point(x, y, coordinates[0]));
+                        }
                     }
                 }
+                this.ColoredPoints = points;
             }
-            this.ColoredPoints = points;
+            catch(Exception ex)
+            {
+                Console.WriteLine(ex.Message);
+            }
         }
     }
 }
